@@ -1,3 +1,3 @@
-library css_chain;
+library flutter_css;
 
 export 'src/widget_extensions.dart';

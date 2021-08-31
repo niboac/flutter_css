@@ -72,12 +72,8 @@ extension Css_Widget on Widget {
     );
   }
 
-  Offstage show({
-    Key key,
-    bool show = true,
-  }) {
+  Offstage show(bool show) {
     return Offstage(
-      key: key,
       offstage: !show,
       child: this,
     );

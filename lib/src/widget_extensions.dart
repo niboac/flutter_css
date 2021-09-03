@@ -19,7 +19,7 @@ import 'package:flutter/material.dart';
 ///
 ///
 
-const double normalPadding = 12;
+const double normalPadding = 16;
 
 extension Css_Widget on Widget {
   List<Widget> addNeighbor(Widget widget) {
@@ -130,6 +130,80 @@ extension Css_Widget on Widget {
     return Padding(
       key: key,
       padding: EdgeInsets.fromLTRB(0, 0, right ?? normalPadding, 0),
+      child: this,
+    );
+  }
+
+  Padding paddingLeftRight(
+    double left,
+    double right, {
+    Key key,
+  }) {
+    return Padding(
+      key: key,
+      padding: EdgeInsets.fromLTRB(left ?? normalPadding, 0, right ?? normalPadding, 0),
+      child: this,
+    );
+  }
+
+  Padding paddingTopBottom(
+    double top,
+    double bottom, {
+    Key key,
+  }) {
+    return Padding(
+      key: key,
+      padding: EdgeInsets.fromLTRB(0, top ?? normalPadding, 0, bottom ?? normalPadding),
+      child: this,
+    );
+  }
+
+  // 这种方式, 调用的时候不需要括号, 像属性一样调用
+  Padding get pAll {
+    return Padding(
+      padding: EdgeInsets.all(normalPadding),
+      child: this,
+    );
+  }
+
+  Padding get pLeft {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(normalPadding, 0, 0, 0),
+      child: this,
+    );
+  }
+
+  Padding get pRight {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, 0, normalPadding, 0),
+      child: this,
+    );
+  }
+
+  Padding get pTop {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, normalPadding, 0, 0),
+      child: this,
+    );
+  }
+
+  Padding get pBottom {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, 0, 0, normalPadding),
+      child: this,
+    );
+  }
+
+  Padding get pLeftRight {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(normalPadding, 0, normalPadding, 0),
+      child: this,
+    );
+  }
+
+  Padding get pTopBottom {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, normalPadding, 0, normalPadding),
       child: this,
     );
   }
